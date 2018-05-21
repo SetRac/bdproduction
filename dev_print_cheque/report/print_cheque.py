@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2015 Devintelle Software Solutions (<http://devintelle.com>).
+#    Copyright (C) 2015 Devintelle Software Solutions (<http://devintellecs.com>).
 #
 ##############################################################################
 
@@ -17,8 +17,8 @@ class print_check(models.AbstractModel):
         return date
 
     def get_partner_name(self,obj,p_text):
-        if p_text:
-            if p_text == 'prefix':
+        if p_text and obj.partner_text:
+            if p_text == 'prefix' :
                 return obj.partner_text + ' ' + obj.partner_id.name
             else:
                 return obj.partner_id.name + ' ' + obj.partner_text
@@ -26,8 +26,13 @@ class print_check(models.AbstractModel):
         return obj.partner_id.name
 
     def amount_word(self, obj):
-        amt_word = num2words(obj.amount) + ' Only'
+        amt = str(obj.amount)
+        amt_lst = amt.split('.')
+        amt_word = num2words(int(amt_lst[0]))
         lst = amt_word.split(' ')
+        if float(amt_lst[1]) > 0:
+            lst.append(' and '+amt_lst[1]+'/'+str(100))
+        lst.append('only')
         lst_len = len(lst)
         first_line = ''
         second_line = ''
@@ -46,7 +51,10 @@ class print_check(models.AbstractModel):
 
         if obj.cheque_formate_id.is_star_word:
             first_line = '***' + first_line
-            second_line += '***'
+            if second_line:
+                second_line += '***'
+            else:
+                first_line=first_line+'***'
 
         first_line = first_line.replace(",", "")
         second_line = second_line.replace(",", "")
@@ -76,8 +84,14 @@ class print_cheque_wizard(models.AbstractModel):
         return date
 
     def amount_word(self, obj):
-        amt_word = num2words(obj.amount) + ' Only'
+        amt = str(obj.amount)
+        amt_lst = amt.split('.')
+        amt_word = num2words(int(amt_lst[0]))
         lst = amt_word.split(' ')
+        if float(amt_lst[1]) > 0:
+            lst.append(' and '+amt_lst[1]+'/'+str(100))
+        lst.append('only')
+        lst_len = len(lst)
         lst_len = len(lst)
         first_line = ''
         second_line = ''
@@ -96,7 +110,10 @@ class print_cheque_wizard(models.AbstractModel):
 
         if obj.cheque_formate_id.is_star_word:
             first_line = '***' + first_line
-            second_line += '***'
+            if second_line:
+                second_line += '***'
+            else:
+                first_line = first_line + '***'
 
         first_line = first_line.replace(",", "")
         second_line = second_line.replace(",", "")

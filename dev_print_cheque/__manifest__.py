@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2015 Devintelle Software Solutions (<http://devintelle.com>).
+#    Copyright (C) 2015 Devintelle Software Solutions (<http://devintellecs.com>).
 #
 ##############################################################################
 
@@ -40,7 +40,6 @@ Cheque print, check print, check writing, bank check print, check dynamic, bank 
     'installable': True,
     'application': True,
     'auto_install': False,
-    'currency':'EUR',
     'live_test_url':'https://youtu.be/A5kEBboAh_k',
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

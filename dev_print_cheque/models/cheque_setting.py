@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2015 Devintelle Software Solutions (<http://devintelle.com>).
+#    Copyright (C) 2015 Devintelle Software Solutions (<http://devintellecs.com>).
 #
 ##############################################################################
 from odoo import models, fields, api
@@ -33,6 +33,8 @@ class cheque_setting(models.Model):
     si_d_m_left = fields.Float('Six Digit', default=625)
     se_d_m_left = fields.Float('Seven Digit', default=640)
     e_d_m_left = fields.Float('Eight Digit', default=655)
+    
+    date_seprator = fields.Char('Seperator')
 
     is_amount = fields.Boolean('Print Amount', default=True)
     amt_m_top = fields.Float('From Top', default=158.76)
@@ -80,6 +82,14 @@ class cheque_setting(models.Model):
     is_acc_pay = fields.Boolean('Print A/C PAY', default=True)
     acc_pay_m_top = fields.Float('From Top', default=90)
     acc_pay_m_left = fields.Float('From Left', default=50)
+    
+    is_f_line_sig = fields.Boolean('Print Signature')
+    f_sig_m_top = fields.Float('From Top', default=200)
+    f_sig_m_left = fields.Float('From Left', default=540)
+    
+    is_s_line_sig = fields.Boolean('Print Signature')
+    s_sig_m_top = fields.Float('From Top', default=300)
+    s_sig_m_left = fields.Float('From Left', default=540)
 
 
 

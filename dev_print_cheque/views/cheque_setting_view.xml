@@ -32,6 +32,7 @@
                     <group>
                         <group string="Print Date" >
                             <field name='is_date' />
+                            <field name="date_seprator"/>
                             <field name="date_formate" attrs="{'required':[('is_date','=',True)]}"/>
                             <field name='year_formate' attrs="{'required':[('is_date','=',True)]}"/>
                             <field name='date_m_top' attrs="{'required':[('is_date','=',True)]}"/>
@@ -148,6 +149,28 @@
                             <field name='acc_pay_m_left' attrs="{'required':[('is_acc_pay','=',True)]}"/>
                         </group>
                     </group>
+                    
+                    <group string="Print Fitst Signature">
+                        <group>
+                            <field name='is_f_line_sig'/>
+                        </group>
+                        <group>
+                            <field name='f_sig_m_top' attrs="{'required':[('is_f_line_sig','=',True)]}"/>
+                            <field name='f_sig_m_left' attrs="{'required':[('is_f_line_sig','=',True)]}"/>
+                        </group>
+                    </group>
+                    
+                    <group string="Print Second Signature">
+                        <group>
+                            <field name='is_s_line_sig'/>
+                        </group>
+                        <group>
+                            <field name='s_sig_m_top' attrs="{'required':[('is_s_line_sig','=',True)]}"/>
+                            <field name='s_sig_m_left' attrs="{'required':[('is_s_line_sig','=',True)]}"/>
+                        </group>
+                    </group>
+                    
+                    
 
                 </sheet>
             </form>

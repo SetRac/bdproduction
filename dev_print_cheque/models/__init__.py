@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2015 Devintelle Software Solutions (<http://devintelle.com>).
+#    Copyright (C) 2015 Devintelle Software Solutions (<http://devintellecs.com>).
 #
 ##############################################################################
 

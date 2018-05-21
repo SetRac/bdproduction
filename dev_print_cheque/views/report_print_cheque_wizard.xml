@@ -144,6 +144,17 @@
                                 </div>
                             </div>
                         </t>
+                        <t t-if="o.cheque_formate_id.is_f_line_sig">
+		                    <div t-attf-style="margin-left:#{o.cheque_formate_id.f_sig_m_left};margin-top:#{o.cheque_formate_id.f_sig_m_top};position: absolute;};">
+		                        _______________________________
+		                    </div>
+		                </t>
+		                
+		                <t t-if="o.cheque_formate_id.is_s_line_sig">
+		                    <div t-attf-style="margin-left:#{o.cheque_formate_id.s_sig_m_left};margin-top:#{o.cheque_formate_id.s_sig_m_top};position: absolute;};">
+		                        _______________________________
+		                    </div>
+		                </t>
 
 
 

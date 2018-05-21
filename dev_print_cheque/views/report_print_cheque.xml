@@ -23,14 +23,14 @@
                             </div>
 
                             <div t-attf-style="margin-left:#{o.cheque_formate_id.s_d_m_left};margin-top:#{o.cheque_formate_id.date_m_top};position: absolute;};">
-                                <span t-esc="date[2][1]"/>
+                                <span t-esc="date[2][1]"/><span style="margin-left:3px" t-esc="o.cheque_formate_id.date_seprator"/>
                             </div>
                             <div t-attf-style="margin-left:#{o.cheque_formate_id.t_d_m_left};margin-top:#{o.cheque_formate_id.date_m_top};position: absolute;};">
                                 <span t-esc="date[1][0]"/>
                             </div>
 
                             <div t-attf-style="margin-left:#{o.cheque_formate_id.fo_d_m_left};margin-top:#{o.cheque_formate_id.date_m_top};position: absolute;};">
-                                <span t-esc="date[1][1]"/>
+                                <span t-esc="date[1][1]"/><span style="margin-left:3px" t-esc="o.cheque_formate_id.date_seprator"/>
                             </div>
                         </t>
                         <t t-if="o.cheque_formate_id.date_formate == 'mm_dd'">
@@ -39,14 +39,14 @@
                             </div>
 
                             <div t-attf-style="margin-left:#{o.cheque_formate_id.s_d_m_left};margin-top:#{o.cheque_formate_id.date_m_top};position: absolute;};">
-                                <span t-esc="date[1][1]"/>
+                                <span t-esc="date[1][1]"/><span style="margin-left:3px" t-esc="o.cheque_formate_id.date_seprator"/>
                             </div>
                             <div t-attf-style="margin-left:#{o.cheque_formate_id.t_d_m_left};margin-top:#{o.cheque_formate_id.date_m_top};position: absolute;};">
                                 <span t-esc="date[2][0]"/>
                             </div>
 
                             <div t-attf-style="margin-left:#{o.cheque_formate_id.fo_d_m_left};margin-top:#{o.cheque_formate_id.date_m_top};position: absolute;};">
-                                <span t-esc="date[2][1]"/>
+                                <span t-esc="date[2][1]"/><span style="margin-left:3px" t-esc="o.cheque_formate_id.date_seprator"/>
                             </div>
                         </t>
                         <t t-if="o.cheque_formate_id.year_formate == 'yy'">
@@ -109,7 +109,6 @@
                                 ***
                             </t>
                             <t t-if="o.cheque_formate_id.is_currency">
-                                hello<br/>
                                 <span t-field="o.amount" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
                             </t>
                             <t t-if="not o.cheque_formate_id.is_currency">
@@ -220,6 +219,20 @@
                             </table>
                         </div>
                     </t>
+                    
+                    <t t-if="o.cheque_formate_id.is_f_line_sig">
+                        <div t-attf-style="margin-left:#{o.cheque_formate_id.f_sig_m_left};margin-top:#{o.cheque_formate_id.f_sig_m_top};position: absolute;};">
+                            _______________________________
+                        </div>
+                    </t>
+                    
+                    <t t-if="o.cheque_formate_id.is_s_line_sig">
+                        <div t-attf-style="margin-left:#{o.cheque_formate_id.s_sig_m_left};margin-top:#{o.cheque_formate_id.s_sig_m_top};position: absolute;};">
+                            _______________________________
+                        </div>
+                    </t>
+                    
+                    
 
                     <t t-if="o.cheque_formate_id.print_journal">
                         <div t-attf-style="margin-left:#{o.cheque_formate_id.journal_margin_left};margin-top:#{o.cheque_formate_id.journal_margin_top};position: absolute;};">
